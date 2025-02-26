@@ -1,0 +1,24 @@
+<h2>Lista de Compras</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Cliente</th>
+      <th>Artículo</th>
+      <th>Fecha</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let compra of compras">
+      <td>{{ compra.idCompra }}</td>
+      <td>{{ compra.clientes.nombre }} {{ compra.clientes.apellidos }}</td>
+      <td>{{ compra.articulos.descripcion }}</td>
+      <td>{{ compra.fecha | date }}</td>
+      <td>
+        <button (click)="eliminarCompra(compra.idCompra)">Eliminar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
